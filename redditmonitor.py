@@ -69,19 +69,18 @@ class RedditMonitor:
                 self.config.logger.debug(f"Got no image from: {post.url}")
                 continue
             textdetector = TextDetector(image)
-            if not textdetector.has_text():
-                self.config.logger.debug("Text not found in image.")
+            if textdetector.has_text():
+                self.config.logger.debug("Text found in image.")
                 continue
             self.config.logger.info(
-                "Removing {0}, text found: {1}".format(
-                    post.permalink, textdetector.get_text()))
+                "Removing {0}, no text found.".format(
+                    post.permalink))
             self.config.logger.debug(textdetector._image_data)
             post.mod.remove()
             reason = str(self.config.removal_reason).format(
                 username=post.author.name,
                 subreddit=post.subreddit.display_name,
-                post_id=post.id,
-                text=", ".join(textdetector.get_text()))
+                post_id=post.id)
             reply = post.reply(reason)
             reply.mod.distinguish(sticky=True)
             self.config.logger.debug(post.permalink + " has been removed!")
