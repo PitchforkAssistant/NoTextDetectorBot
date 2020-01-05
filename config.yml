@@ -1,7 +1,7 @@
 debug: true
 remove: true
 removal_reason: |+
-  Hi /u/{username}! All submissions to /r/{subreddit} must be screenshots of social media. As you post does not appear to contain any text, it has been removed.
+  Hi /u/{username}! All submissions to /r/{subreddit} must be screenshots of commentary on social media. You can visit our rules page and check out Rule 2 for more information, or you can just use your eyes and tilt them to the right until they land on the sidebar where we conveniently store the rules on every single page.
   
   *If you have read [our full rules](https://www.reddit.com/r/{subreddit}/about/rules) and are certain this post is allowed, reply to this comment or [message the moderators with a link to this post](https://www.reddit.com/message/compose?to=%2Fr%2F{subreddit}&message=I%20believe%20my%20post%20was%20erroneously%20removed%2C%20could%20you%20please%20approve%20it%3A%20http%3A%2F%2Fredd.it%2F{post_id}) for human review.* ***Keep in mind that you may be further penalized if you modmail us and have clearly failed to understand [the rules](https://www.reddit.com/r/{subreddit}/about/rules).*** 
 human_review: true # Whether the bot will monitor its inbox for replies to the removal reason.
